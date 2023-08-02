@@ -1,0 +1,10 @@
+.no_bg_tab_text{
+    color: #03A9F4;
+    font-size: 11px;
+    float: right;
+    margin: 10px;
+    background-image: url('./assets/warning.png');
+    background-repeat: no-repeat;
+    padding-right: 22px;
+    background-position: 207px;
+}

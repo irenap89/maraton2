@@ -60,6 +60,7 @@
     color: white;
     margin-left: 1%;
     border-radius: 8px;
+    background-color: #2F3A4B;
 }
 
 .right_div{
@@ -170,7 +171,7 @@
     background-image: url('./assets/Cleanup\ Edges.png');
     background-repeat: no-repeat;
     background-position: 55px 3px;
-    border-bottom: 3px solid #9C27B0;
+    /* border-bottom: 3px solid #9C27B0; */
 }
 
 .original{
@@ -179,3 +180,46 @@
     background-position: 58px 4px;
 }
 
+
+
+.original_tab, .no_bg_tab{
+
+    height: 80%;
+    background-color: #161B21;
+}
+
+.eula_text{
+    float: right;
+    font-size: 12px;
+    margin: 20px;
+    color: #aeaeae;
+}
+
+.eula_btn{
+
+    background-color: #475366;
+    background-color: #475366;
+    border: none;
+    color: white;
+
+    font-size: 12px;
+    width: 102px;
+    height: 25px;
+    border-radius: 15px;
+    float: left;
+    margin: 15px;
+    background-image: url('./assets/eula.png');
+    background-repeat: no-repeat;
+    background-position: 10px;
+    padding-left: 20px;
+}
+
+.logo_img{
+    position: relative;
+    top: -9px;
+}
+
+.banner_img{
+    margin-top: 14px;
+    margin-left: 82px;
+}
