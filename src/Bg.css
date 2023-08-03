@@ -26,7 +26,7 @@
     margin-top: -29px;
     margin-left: 25px;
     border: none;
-    border-radius: 8px;
+    border-radius: 15px;
     height: 30px;
     width: 110px;
     padding-left: 29px;
@@ -34,6 +34,7 @@
     background-position: 10px;
     font-family: 'Aduma';
     color:white;
+    cursor: pointer;
 }
 
 .header{
@@ -212,6 +213,7 @@
     background-repeat: no-repeat;
     background-position: 10px;
     padding-left: 20px;
+    cursor: pointer;
 }
 
 .logo_img{
@@ -222,4 +224,8 @@
 .banner_img{
     margin-top: 14px;
     margin-left: 82px;
+}
+
+.input_file{
+    display: none;
 }
