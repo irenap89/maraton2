@@ -6,3 +6,9 @@
     top: 258px;
     padding: 20px;
 }
+
+img{
+    position: relative;
+    top: -15px;
+    left: -18px;
+}
