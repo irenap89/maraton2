@@ -14,7 +14,7 @@ function Eula(props) {
 
     return(
         <div className='eula_div'>
-            <img src={close1} onClick={close_popup} />
+            <img src={close1} className="eula_close_img" onClick={close_popup} />
 
             לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית הועניב היושבב שערש שמחויט - שלושע ותלברו חשלו שעותלשך וחאית נובש ערששף. זותה מנק הבקיץ אפאח דלאמת יבש, כאנה ניצאחו נמרגי שהכים תוק, הדש שנרא התידם הכייר וק.
 

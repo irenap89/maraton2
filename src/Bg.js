@@ -50,11 +50,10 @@ function Bg() {
     
     debugger;
 
-    if(data.type=='image/png' || data.type=='image/jpg') {
+    if(data.type=='image/png' || data.type=='image/jpg' || data.type=='image/jpeg') {
       debugger;
         const formData = new FormData();
-
-
+        
       const config = {     
           headers: { 'content-type': 'multipart/form-data' }
       }
