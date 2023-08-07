@@ -1,16 +1,19 @@
 const express = require('express');
-const path = require("path");
+const path  = require('path')
 
 const app = express();
 const port = 5000;
 
-var fs = require("fs");
-const os = require("os");
+//const upload = require('./upload');
+//path.join('/', 'users');
 
-// get temp directory
-const tempDir = os.tmpdir();
+var fs = require("fs");
+
+app.use(express.json());
+
 var cors = require('cors');
 app.use(cors());
+
 
 var fileupload = require("express-fileupload");
 app.use(fileupload());
@@ -18,15 +21,15 @@ app.use(fileupload());
 app.use(express.static('upload_image'));
 
 
-app.post('/upload_file', (req , res) => {
+app.post('/upload_file' , (req , res) => {
 
     console.log(req.files);
 
-    const tempPath = req.files.tempFilePath;
-    const targetPath = path.join(__dirname, "./upload_image/image.png");
+    // const tempPath = req.files.tempFilePath;
+    // const targetPath = path.join(__dirname, "./upload_image/image.png");
 
-    console.log(tempPath);
-    console.log(targetPath);
+    // console.log(tempPath);
+    // console.log(targetPath);
 
     // if (path.extname(req.files.originalname).toLowerCase() === ".png") {
     //   fs.rename(tempPath, targetPath, err => {
