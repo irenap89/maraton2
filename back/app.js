@@ -1,48 +1,41 @@
 const express = require('express');
-const path  = require('path')
 
 const app = express();
 const port = 5000;
 
-//const upload = require('./upload');
-//path.join('/', 'users');
+app.use(express.static("files"));
 
-var fs = require("fs");
+var fileupload = require("express-fileupload");
+//app.use(fileupload({useTempFiles:true}));
 
-app.use(express.json());
+app.use(fileupload());
 
 var cors = require('cors');
 app.use(cors());
 
-
-var fileupload = require("express-fileupload");
-app.use(fileupload());
-
 app.use(express.static('upload_image'));
 
+const send_to_api=require('./send_to_api');
 
 app.post('/upload_file' , (req , res) => {
 
     console.log(req.files);
 
-    // const tempPath = req.files.tempFilePath;
-    // const targetPath = path.join(__dirname, "./upload_image/image.png");
+    const newpath = __dirname + "/upload_image/";
+    const file = req.files.myFile;
+    const now = new Date().getTime();
 
-    // console.log(tempPath);
-    // console.log(targetPath);
+    const filename =  now + file.name ;
+   
+    file.mv(`${newpath}${filename}`, (err) => {
 
-    // if (path.extname(req.files.originalname).toLowerCase() === ".png") {
-    //   fs.rename(tempPath, targetPath, err => {
-    //     if (err) return handleError(err, res);
+      send_to_api(`${newpath}${filename}`,filename );
 
-    //     res
-    //       .status(200)
-    //       .contentType("text/plain")
-    //       .end("File uploaded!");
-    //   });
-    // }
+      if (err) {
+        res.status(500).send({ message: "File upload failed", code: 200 });
+      }
+    });
 
-     res.send('Hello World!')
 })
 
 

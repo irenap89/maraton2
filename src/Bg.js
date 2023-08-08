@@ -1,5 +1,4 @@
 import './Bg.css';
-
 import { useState, useRef } from "react";
 import axios from 'axios';
 
@@ -81,6 +80,7 @@ function Bg() {
 
   return (
   <div className="Bg">
+
      <div className="header">
         <span className='header_text'> העלאת תמונה כדי להסיר את הרקע </span>
         <button className="header_btn"  onClick={upload_file} > העלאת תמונה</button>
