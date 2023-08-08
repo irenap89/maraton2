@@ -20,6 +20,8 @@ function Bg() {
 
   const [show_eula, setshow_eula] = useState(false);
 
+  const [image_name, setimage_name] = useState("");
+
 
   function change_tab(e) {
 
@@ -47,10 +49,10 @@ function Bg() {
 
     let data = e.target.files[0];
     
-    debugger;
+ 
 
     if(data.type=='image/png' || data.type=='image/jpg' || data.type=='image/jpeg') {
-      debugger;
+     
         const formData = new FormData();
         
       const config = {     
@@ -66,7 +68,10 @@ function Bg() {
 
       axios.post(`http://localhost:5000/upload_file`, formData, config)
         .then(res => {
+
             console.log(res);
+            setimage_name(res.data.imageName);
+
       })
 
     } else{
@@ -101,9 +106,9 @@ function Bg() {
           </div>
 
           {display_no_bg_tab=="yes" ?  
-             <Original/>
+             <Original image_name={image_name}/>
           :
-             <No_bg/>
+             <No_bg image_name={image_name}/>
           }
       
           <div className='left_div_footer'>

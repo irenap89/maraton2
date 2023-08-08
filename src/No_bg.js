@@ -3,7 +3,9 @@ import './No_bg.css';
 
 import { useState, useRef } from "react";
 
-function No_bg() {
+function No_bg(props) {
+
+    console.log(props.image_name);
 
     const [color, setcolor] = useState('#000');
 
@@ -33,6 +35,13 @@ function No_bg() {
          </div>
 
         <input type="color" className="input_color" onChange={change_color} ref={inputElement}/>
+
+        {props.image_name? 
+        <div className='image_bo_bg_div'>
+            <img className="image_no_bg" src={"http://localhost:5000/no_bg_"+props.image_name} />
+
+        </div>
+        : "" }
       </div>
     )
 }

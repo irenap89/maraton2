@@ -23,7 +23,7 @@ module.exports = async function send_to_api(image_path , fileName) {
     })
     .then((response) => {
     if(response.status != 200) return console.error('Error:', response.status, response.statusText);
-        fs.writeFileSync(__dirname + "/no_bg_image/" + fileName , response.data);
+        fs.writeFileSync(__dirname + "/no_bg_image/no_bg_" + fileName , response.data);
     })
     .catch((error) => {
         return console.error('Request failed:', error);
